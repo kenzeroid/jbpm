@@ -1,18 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:drools="http://www.jboss.org/drools" id="_rhNN0EGUEe6oucz0v4tRqQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
-  <bpmn2:process id="kie-project.printEmployeeDetails" drools:packageName="com.kie_space.kie_project" drools:version="1.0" drools:adHoc="false" name="printEmployeeDetails" isExecutable="true" processType="Public"/>
-  <bpmndi:BPMNDiagram id="_rhNN0UGUEe6oucz0v4tRqQ">
-    <bpmndi:BPMNPlane id="_rhNN0kGUEe6oucz0v4tRqQ" bpmnElement="kie-project.printEmployeeDetails"/>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_W9VrsEGVEe6oucz0v4tRqQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_empItem" structureRef="com.kie_space.kie_project.Employee"/>
+  <bpmn2:process id="kie-project.printEmployeeDetails" drools:packageName="com.kie_space.kie_project" drools:version="1.0" drools:adHoc="false" name="printEmployeeDetails" isExecutable="true" processType="Public">
+    <bpmn2:property id="emp" itemSubjectRef="_empItem" name="emp">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[emp]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:sequenceFlow id="_F333F928-7DD0-4664-B261-B4FD66609638" sourceRef="_CD7BBC9A-1563-447A-AD5F-92BFAD890BED" targetRef="_F53E1A19-E8B6-4194-926D-91159E89DE41">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_F699A002-FBB3-424E-9280-4713E0595C2E" sourceRef="_F53E1A19-E8B6-4194-926D-91159E89DE41" targetRef="_92896718-F235-470C-AA36-9254945324B0">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.source">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:startEvent id="_CD7BBC9A-1563-447A-AD5F-92BFAD890BED">
+      <bpmn2:outgoing>_F333F928-7DD0-4664-B261-B4FD66609638</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:scriptTask id="_F53E1A19-E8B6-4194-926D-91159E89DE41" name="Print Employee" scriptFormat="http://www.java.com/java">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Print Employee]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_F333F928-7DD0-4664-B261-B4FD66609638</bpmn2:incoming>
+      <bpmn2:outgoing>_F699A002-FBB3-424E-9280-4713E0595C2E</bpmn2:outgoing>
+    </bpmn2:scriptTask>
+    <bpmn2:endEvent id="_92896718-F235-470C-AA36-9254945324B0">
+      <bpmn2:incoming>_F699A002-FBB3-424E-9280-4713E0595C2E</bpmn2:incoming>
+    </bpmn2:endEvent>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_W9VrsUGVEe6oucz0v4tRqQ">
+    <bpmndi:BPMNPlane id="_W9VrskGVEe6oucz0v4tRqQ" bpmnElement="kie-project.printEmployeeDetails">
+      <bpmndi:BPMNShape id="shape__92896718-F235-470C-AA36-9254945324B0" bpmnElement="_92896718-F235-470C-AA36-9254945324B0">
+        <dc:Bounds height="56.0" width="56.0" x="845.0" y="177.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__F53E1A19-E8B6-4194-926D-91159E89DE41" bpmnElement="_F53E1A19-E8B6-4194-926D-91159E89DE41">
+        <dc:Bounds height="102.0" width="154.0" x="651.0" y="154.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__CD7BBC9A-1563-447A-AD5F-92BFAD890BED" bpmnElement="_CD7BBC9A-1563-447A-AD5F-92BFAD890BED">
+        <dc:Bounds height="56.0" width="56.0" x="542.0" y="177.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__F53E1A19-E8B6-4194-926D-91159E89DE41_to_shape__92896718-F235-470C-AA36-9254945324B0" bpmnElement="_F699A002-FBB3-424E-9280-4713E0595C2E">
+        <di:waypoint xsi:type="dc:Point" x="805.0" y="205.0"/>
+        <di:waypoint xsi:type="dc:Point" x="845.0" y="205.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__CD7BBC9A-1563-447A-AD5F-92BFAD890BED_to_shape__F53E1A19-E8B6-4194-926D-91159E89DE41" bpmnElement="_F333F928-7DD0-4664-B261-B4FD66609638">
+        <di:waypoint xsi:type="dc:Point" x="570.0" y="205.0"/>
+        <di:waypoint xsi:type="dc:Point" x="651.0" y="205.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_rhNN00GUEe6oucz0v4tRqQ" type="BPSimData">
+  <bpmn2:relationship id="_W9WSwEGVEe6oucz0v4tRqQ" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_F53E1A19-E8B6-4194-926D-91159E89DE41" id="_W9WSwUGVEe6oucz0v4tRqQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_CD7BBC9A-1563-447A-AD5F-92BFAD890BED" id="_W9WSwkGVEe6oucz0v4tRqQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_rhNN0EGUEe6oucz0v4tRqQ</bpmn2:source>
-    <bpmn2:target>_rhNN0EGUEe6oucz0v4tRqQ</bpmn2:target>
+    <bpmn2:source>_W9VrsEGVEe6oucz0v4tRqQ</bpmn2:source>
+    <bpmn2:target>_W9VrsEGVEe6oucz0v4tRqQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
