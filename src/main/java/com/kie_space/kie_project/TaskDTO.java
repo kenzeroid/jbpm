@@ -6,12 +6,24 @@ package com.kie_space.kie_project;
 
 public class TaskDTO implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public TaskDTO() {
-    }
+	@org.kie.api.definition.type.Label(value = "status")
+	private java.lang.String status;
 
+	public TaskDTO() {
+	}
 
+	public java.lang.String getStatus() {
+		return this.status;
+	}
 
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public TaskDTO(java.lang.String status) {
+		this.status = status;
+	}
 
 }
