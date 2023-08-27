@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_ndwAYES-Ee6D-pw-1JmEcQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="__obmQES_Ee6D-pw-1JmEcQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_mortagageListItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_multiInstanceItemType_mortagageValue" structureRef="Object"/>
   <bpmn2:process id="kie-project.SubprocessChild" drools:packageName="com.kie_space.kie_project" drools:version="1.0" drools:adHoc="false" name="SubprocessChild" isExecutable="true" processType="Public">
+    <bpmn2:property id="mortagageList" itemSubjectRef="_mortagageListItem" name="mortagageList">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue><![CDATA[mortagageList]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
     <bpmn2:sequenceFlow id="_01AD320A-4CEB-4DA1-BE7E-2EEBF826752C" sourceRef="_A58704E8-F9DF-4FFB-8600-2428651D77D7" targetRef="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3">
       <bpmn2:extensionElements>
         <drools:metaData name="isAutoConnection.target">
@@ -32,40 +41,89 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>_01AD320A-4CEB-4DA1-BE7E-2EEBF826752C</bpmn2:incoming>
       <bpmn2:outgoing>_AF7DBEF6-66F6-40E9-A9D5-D330512BDF5C</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_ndwAYUS-Ee6D-pw-1JmEcQ">
-        <bpmn2:inputSet id="_ndwAYkS-Ee6D-pw-1JmEcQ"/>
-        <bpmn2:outputSet id="_ndwAY0S-Ee6D-pw-1JmEcQ"/>
+      <bpmn2:ioSpecification id="__obmQUS_Ee6D-pw-1JmEcQ">
+        <bpmn2:dataInput id="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_mortagageValueInputX" itemSubjectRef="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_multiInstanceItemType_mortagageValue" name="mortagageValue"/>
+        <bpmn2:inputSet id="__obmQkS_Ee6D-pw-1JmEcQ">
+          <bpmn2:dataInputRefs>_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_mortagageValueInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="__obmQ0S_Ee6D-pw-1JmEcQ"/>
       </bpmn2:ioSpecification>
-      <bpmn2:multiInstanceLoopCharacteristics id="_ndwAZES-Ee6D-pw-1JmEcQ"/>
+      <bpmn2:multiInstanceLoopCharacteristics id="__obmRES_Ee6D-pw-1JmEcQ" isSequential="true">
+        <bpmn2:inputDataItem xsi:type="bpmn2:tDataInput" id="mortagageValue" itemSubjectRef="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_multiInstanceItemType_mortagageValue" name="mortagageValue"/>
+      </bpmn2:multiInstanceLoopCharacteristics>
+      <bpmn2:sequenceFlow id="_65748C3E-0A21-4732-AEBA-1DDD663BC7D2" sourceRef="_944FD14C-4EBC-40AB-84AA-F8803A083ED0" targetRef="_5682CAAC-463E-4C1D-A112-2B504276FB7C">
+        <bpmn2:extensionElements>
+          <drools:metaData name="isAutoConnection.source">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+          <drools:metaData name="isAutoConnection.target">
+            <drools:metaValue><![CDATA[true]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+      </bpmn2:sequenceFlow>
+      <bpmn2:sequenceFlow id="_2264A8F0-90EA-42E9-A7B3-32EEE8055D04" sourceRef="_488A9B79-ABFA-4AA2-976B-B5DA06197459" targetRef="_944FD14C-4EBC-40AB-84AA-F8803A083ED0"/>
+      <bpmn2:scriptTask id="_944FD14C-4EBC-40AB-84AA-F8803A083ED0" name="Print Detail" scriptFormat="http://www.java.com/java">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Print Detail]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>_2264A8F0-90EA-42E9-A7B3-32EEE8055D04</bpmn2:incoming>
+        <bpmn2:outgoing>_65748C3E-0A21-4732-AEBA-1DDD663BC7D2</bpmn2:outgoing>
+        <bpmn2:script><![CDATA[System.out.println("Each Mortagage value is : "+mortagageValue)]]></bpmn2:script>
+      </bpmn2:scriptTask>
+      <bpmn2:endEvent id="_5682CAAC-463E-4C1D-A112-2B504276FB7C">
+        <bpmn2:incoming>_65748C3E-0A21-4732-AEBA-1DDD663BC7D2</bpmn2:incoming>
+      </bpmn2:endEvent>
+      <bpmn2:startEvent id="_488A9B79-ABFA-4AA2-976B-B5DA06197459">
+        <bpmn2:outgoing>_2264A8F0-90EA-42E9-A7B3-32EEE8055D04</bpmn2:outgoing>
+      </bpmn2:startEvent>
     </bpmn2:subProcess>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_ndwAZUS-Ee6D-pw-1JmEcQ">
-    <bpmndi:BPMNPlane id="_ndwAZkS-Ee6D-pw-1JmEcQ" bpmnElement="kie-project.SubprocessChild">
+  <bpmndi:BPMNDiagram id="__obmRUS_Ee6D-pw-1JmEcQ">
+    <bpmndi:BPMNPlane id="__obmRkS_Ee6D-pw-1JmEcQ" bpmnElement="kie-project.SubprocessChild">
       <bpmndi:BPMNShape id="shape__784A3E0C-CA5A-45D5-AC12-50A50340BCB3" bpmnElement="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3">
         <dc:Bounds height="250.0" width="650.0" x="408.0" y="84.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__488A9B79-ABFA-4AA2-976B-B5DA06197459" bpmnElement="_488A9B79-ABFA-4AA2-976B-B5DA06197459">
+        <dc:Bounds height="56.0" width="56.0" x="443.0" y="181.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__944FD14C-4EBC-40AB-84AA-F8803A083ED0_to_shape__5682CAAC-463E-4C1D-A112-2B504276FB7C" bpmnElement="_65748C3E-0A21-4732-AEBA-1DDD663BC7D2">
+        <di:waypoint xsi:type="dc:Point" x="746.0" y="209.0"/>
+        <di:waypoint xsi:type="dc:Point" x="826.0" y="209.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__488A9B79-ABFA-4AA2-976B-B5DA06197459_to_shape__944FD14C-4EBC-40AB-84AA-F8803A083ED0" bpmnElement="_2264A8F0-90EA-42E9-A7B3-32EEE8055D04">
+        <di:waypoint xsi:type="dc:Point" x="471.0" y="209.0"/>
+        <di:waypoint xsi:type="dc:Point" x="669.0" y="209.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape__5682CAAC-463E-4C1D-A112-2B504276FB7C" bpmnElement="_5682CAAC-463E-4C1D-A112-2B504276FB7C">
+        <dc:Bounds height="56.0" width="56.0" x="826.0" y="181.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__944FD14C-4EBC-40AB-84AA-F8803A083ED0" bpmnElement="_944FD14C-4EBC-40AB-84AA-F8803A083ED0">
+        <dc:Bounds height="102.0" width="154.0" x="592.0" y="158.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__FEC5D402-9A97-4B8B-8177-7E5A4393B0E1" bpmnElement="_FEC5D402-9A97-4B8B-8177-7E5A4393B0E1">
         <dc:Bounds height="56.0" width="56.0" x="1138.0" y="181.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__A58704E8-F9DF-4FFB-8600-2428651D77D7" bpmnElement="_A58704E8-F9DF-4FFB-8600-2428651D77D7">
-        <dc:Bounds height="56.0" width="56.0" x="307.0" y="84.0"/>
+        <dc:Bounds height="56.0" width="56.0" x="299.0" y="181.0"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__784A3E0C-CA5A-45D5-AC12-50A50340BCB3_to_shape__FEC5D402-9A97-4B8B-8177-7E5A4393B0E1" bpmnElement="_AF7DBEF6-66F6-40E9-A9D5-D330512BDF5C">
         <di:waypoint xsi:type="dc:Point" x="1058.0" y="209.0"/>
         <di:waypoint xsi:type="dc:Point" x="1138.0" y="209.0"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__A58704E8-F9DF-4FFB-8600-2428651D77D7_to_shape__784A3E0C-CA5A-45D5-AC12-50A50340BCB3" bpmnElement="_01AD320A-4CEB-4DA1-BE7E-2EEBF826752C">
-        <di:waypoint xsi:type="dc:Point" x="335.0" y="112.0"/>
+        <di:waypoint xsi:type="dc:Point" x="327.0" y="209.0"/>
         <di:waypoint xsi:type="dc:Point" x="408.0" y="209.0"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_ndwAZ0S-Ee6D-pw-1JmEcQ" type="BPSimData">
+  <bpmn2:relationship id="__obmR0S_Ee6D-pw-1JmEcQ" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A58704E8-F9DF-4FFB-8600-2428651D77D7" id="_ndwAaES-Ee6D-pw-1JmEcQ">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A58704E8-F9DF-4FFB-8600-2428651D77D7" id="__obmSES_Ee6D-pw-1JmEcQ">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -75,7 +133,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_ndwAYES-Ee6D-pw-1JmEcQ</bpmn2:source>
-    <bpmn2:target>_ndwAYES-Ee6D-pw-1JmEcQ</bpmn2:target>
+    <bpmn2:source>__obmQES_Ee6D-pw-1JmEcQ</bpmn2:source>
+    <bpmn2:target>__obmQES_Ee6D-pw-1JmEcQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
