@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="__obmQES_Ee6D-pw-1JmEcQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_BPrQ4ETAEe6D-pw-1JmEcQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_mortagageListItem" structureRef="Object"/>
   <bpmn2:itemDefinition id="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_multiInstanceItemType_mortagageValue" structureRef="Object"/>
   <bpmn2:process id="kie-project.SubprocessChild" drools:packageName="com.kie_space.kie_project" drools:version="1.0" drools:adHoc="false" name="SubprocessChild" isExecutable="true" processType="Public">
@@ -41,14 +41,21 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>_01AD320A-4CEB-4DA1-BE7E-2EEBF826752C</bpmn2:incoming>
       <bpmn2:outgoing>_AF7DBEF6-66F6-40E9-A9D5-D330512BDF5C</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="__obmQUS_Ee6D-pw-1JmEcQ">
+      <bpmn2:ioSpecification id="_BPrQ4UTAEe6D-pw-1JmEcQ">
+        <bpmn2:dataInput id="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_IN_COLLECTIONInputX" itemSubjectRef="_mortagageListItem" name="IN_COLLECTION"/>
         <bpmn2:dataInput id="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_mortagageValueInputX" itemSubjectRef="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_multiInstanceItemType_mortagageValue" name="mortagageValue"/>
-        <bpmn2:inputSet id="__obmQkS_Ee6D-pw-1JmEcQ">
+        <bpmn2:inputSet id="_BPrQ4kTAEe6D-pw-1JmEcQ">
+          <bpmn2:dataInputRefs>_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_IN_COLLECTIONInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_mortagageValueInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="__obmQ0S_Ee6D-pw-1JmEcQ"/>
+        <bpmn2:outputSet id="_BPrQ40TAEe6D-pw-1JmEcQ"/>
       </bpmn2:ioSpecification>
-      <bpmn2:multiInstanceLoopCharacteristics id="__obmRES_Ee6D-pw-1JmEcQ" isSequential="true">
+      <bpmn2:dataInputAssociation id="_BPrQ5ETAEe6D-pw-1JmEcQ">
+        <bpmn2:sourceRef>mortagageList</bpmn2:sourceRef>
+        <bpmn2:targetRef>_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_IN_COLLECTIONInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:multiInstanceLoopCharacteristics id="_BPrQ5UTAEe6D-pw-1JmEcQ" isSequential="true">
+        <bpmn2:loopDataInputRef>_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_IN_COLLECTIONInputX</bpmn2:loopDataInputRef>
         <bpmn2:inputDataItem xsi:type="bpmn2:tDataInput" id="mortagageValue" itemSubjectRef="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3_multiInstanceItemType_mortagageValue" name="mortagageValue"/>
       </bpmn2:multiInstanceLoopCharacteristics>
       <bpmn2:sequenceFlow id="_65748C3E-0A21-4732-AEBA-1DDD663BC7D2" sourceRef="_944FD14C-4EBC-40AB-84AA-F8803A083ED0" targetRef="_5682CAAC-463E-4C1D-A112-2B504276FB7C">
@@ -80,8 +87,8 @@
       </bpmn2:startEvent>
     </bpmn2:subProcess>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="__obmRUS_Ee6D-pw-1JmEcQ">
-    <bpmndi:BPMNPlane id="__obmRkS_Ee6D-pw-1JmEcQ" bpmnElement="kie-project.SubprocessChild">
+  <bpmndi:BPMNDiagram id="_BPrQ5kTAEe6D-pw-1JmEcQ">
+    <bpmndi:BPMNPlane id="_BPrQ50TAEe6D-pw-1JmEcQ" bpmnElement="kie-project.SubprocessChild">
       <bpmndi:BPMNShape id="shape__784A3E0C-CA5A-45D5-AC12-50A50340BCB3" bpmnElement="_784A3E0C-CA5A-45D5-AC12-50A50340BCB3">
         <dc:Bounds height="250.0" width="650.0" x="408.0" y="84.0"/>
       </bpmndi:BPMNShape>
@@ -118,12 +125,12 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="__obmR0S_Ee6D-pw-1JmEcQ" type="BPSimData">
+  <bpmn2:relationship id="_BPrQ6ETAEe6D-pw-1JmEcQ" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A58704E8-F9DF-4FFB-8600-2428651D77D7" id="__obmSES_Ee6D-pw-1JmEcQ">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A58704E8-F9DF-4FFB-8600-2428651D77D7" id="_BPrQ6UTAEe6D-pw-1JmEcQ">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -133,7 +140,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>__obmQES_Ee6D-pw-1JmEcQ</bpmn2:source>
-    <bpmn2:target>__obmQES_Ee6D-pw-1JmEcQ</bpmn2:target>
+    <bpmn2:source>_BPrQ4ETAEe6D-pw-1JmEcQ</bpmn2:source>
+    <bpmn2:target>_BPrQ4ETAEe6D-pw-1JmEcQ</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
